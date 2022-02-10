@@ -68,6 +68,7 @@ public class GridIllumination{
 class Solution {
     public int[] gridIllumination(int n, int[][] lamps, int[][] queries) {
 
+        return new int[]{};
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
