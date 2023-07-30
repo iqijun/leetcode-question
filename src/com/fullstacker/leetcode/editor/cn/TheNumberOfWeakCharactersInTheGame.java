@@ -61,22 +61,21 @@ public class TheNumberOfWeakCharactersInTheGame{
   }
   //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    public int numberOfWeakCharacters(int[][] properties) {
+      public int numberOfWeakCharacters(int[][] properties) {
 
-        Arrays.sort(properties,(a,b)->{return  a[0] - b[0] > 0 ? 1 : (a[0]-b[0] == 0 ?  a[1] - b[1]  : -1) ;});
-        int defenseiMin = properties[0][1];
-        int count = 0;
-        for (int[] role : properties){
-            if(defenseiMin < role[1]){
-                count ++ ;
-                defenseiMin = role[1];
-            }else{
+          Arrays.sort(properties,(a,b)->{return  a[0]-b[0] == 0 ?  b[1] - a[1]  : b[0] - a[0];});
+          int defenseiMax = properties[0][1];
+          int count = 0;
+          for (int[] role : properties){
+              if(defenseiMax > role[1]){
+                  count++;
+              }else{
+                  defenseiMax = role[1];
+              }
+          }
 
-            }
-        }
-
-        return count;
-    }
+          return count;
+      }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
